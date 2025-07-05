@@ -92,27 +92,40 @@ function TransitSelectPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading commute options...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+          <p className="text-white">Loading commute options...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-2xl mx-auto px-4">
-        <div className="bg-white rounded-lg shadow-md p-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2 text-center">
-            Select Transit Option
-          </h2>
-          <p className="text-gray-600 mb-8 text-center">
-            {university
-              ? `Going to ${university}`
-              : "Available commute options"}
-          </p>
+    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600">
+      {/* Navbar */}
+      <nav className="bg-white/10 backdrop-blur-sm border-b border-white/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <h1 className="text-xl font-bold text-white">Commuter Buddy</h1>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <div className="py-8" style={{ minHeight: "calc(100vh - 4rem)" }}>
+        <div className="max-w-2xl mx-auto px-4">
+          <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-8 border border-white/20">
+            <h2 className="text-3xl font-bold text-gray-800 mb-2 text-center">
+              Select Transit Option
+            </h2>
+            <p className="text-gray-600 mb-8 text-center">
+              {university
+                ? `Going to ${university}`
+                : "Available commute options"}
+            </p>
 
           {options.length === 0 ? (
             <div className="text-center py-12">
@@ -121,7 +134,7 @@ function TransitSelectPage() {
               </p>
               <button
                 onClick={() => navigate("/university")}
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 shadow-lg"
               >
                 Go Back
               </button>
@@ -130,7 +143,7 @@ function TransitSelectPage() {
             <>
               <div className="space-y-4 mb-8">
                 {options
-                  .filter((option) => option.userName != user.full_name)
+                  .filter((option) => option.userName !== user.full_name)
                   .map((option) => (
                     <div
                       key={option.id}
@@ -138,7 +151,7 @@ function TransitSelectPage() {
                       className={`p-6 border rounded-lg cursor-pointer transition-all hover:shadow-md ${
                         selectedOption?.id === option.id
                           ? "border-blue-500 bg-blue-50"
-                          : "border-gray-200 hover:border-gray-300"
+                          : "border-white/30 hover:border-white/50 hover:bg-white/20"
                       }`}
                     >
                       <div className="flex justify-between items-start">
@@ -182,7 +195,7 @@ function TransitSelectPage() {
                 disabled={!selectedOption}
                 className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
                   selectedOption
-                    ? "bg-blue-600 text-white hover:bg-blue-700"
+                    ? "bg-blue-600 text-white hover:bg-blue-700 shadow-lg"
                     : "bg-gray-300 text-gray-500 cursor-not-allowed"
                 }`}
               >
@@ -192,6 +205,7 @@ function TransitSelectPage() {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 }

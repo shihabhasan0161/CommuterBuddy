@@ -15,14 +15,14 @@ function ConnectPage() {
 
   if (!buddy) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+          <h2 className="text-2xl font-bold text-white mb-4">
             No buddy selected
           </h2>
           <button
             onClick={() => navigate('/transit')}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+            className="bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-white/90 shadow-lg font-semibold"
           >
             Go Back
           </button>
@@ -32,12 +32,25 @@ function ConnectPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-      <div className="max-w-md w-full mx-4">
-        <div className="bg-white rounded-lg shadow-md p-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-            Connect with Buddy
-          </h2>
+    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600">
+      {/* Navbar */}
+      <nav className="bg-white/10 backdrop-blur-sm border-b border-white/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <h1 className="text-xl font-bold text-white">Commuter Buddy</h1>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <div className="flex items-center justify-center" style={{ height: "calc(100vh - 4rem)" }}>
+        <div className="max-w-md w-full mx-4">
+          <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-8 border border-white/20">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+              Connect with Buddy
+            </h2>
           
           <div className="bg-blue-50 rounded-lg p-6 mb-8">
             <h3 className="text-xl font-semibold text-gray-800 mb-4">
@@ -62,12 +75,13 @@ function ConnectPage() {
 
           <button
             onClick={handleConfirm}
-            className="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+            className="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors shadow-lg"
           >
             Confirm Connection
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 }
