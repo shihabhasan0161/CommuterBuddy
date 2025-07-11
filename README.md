@@ -60,13 +60,6 @@ CommuterBuddy helps university students find travel companions with matching rou
 - Daily commuters with regular routes
 - Safety-conscious travelers seeking community connections
 
-## Privacy & Security
-
-- Secure user authentication
-- Row Level Security (RLS) policies
-- Encrypted data storage
-- Controlled access to personal information
-
 ## Future Enhancements
 
 - University Single Sign-On (SSO)
@@ -96,21 +89,6 @@ npm start
 # Build for production
 npm run build
 ```
-
-## Last but not least - Team 💻:
-
-- I, **[Shihab](https://github.com/shihabhasan0161) – The Map Magician**  
-  I led project scaffolding and frontend work, including creating our Leaflet-based map UI, squashing bugs across the app, and implementing Supabase for authentication and database.
-
-- **[Sam](https://github.com/FadedBronze) – The Linux Guy**  
-  Engineered our real-time chat and kept the backend shipshape: wrote core socket logic, reviewed—and vanquished—bugs throughout the codebase.
-
-- **[Muhammad](https://github.com/mfsohail12) – The UX Wizard**  
-  Crafted the map-page experience and key UI tweaks: iterated on layouts, sprinkled design magic, and collaborated closely with the whole squad.
-
-- **[Sakshi](https://github.com/sakshixgoel) – The Logo Maestro**  
-  Forged the product vision and branding: dreamed up the concept, built the request form, and composed our project logo and style guide.
-
 ---
 
-*Built for Hack404 (July 4-6, 2025) - Connecting communities, one commute at a time* 🚌✨
+Built for Hack404 (July 4-6, 2025)
